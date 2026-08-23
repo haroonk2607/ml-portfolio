@@ -1,24 +1,30 @@
-# Muhammad Haroon Khan - Portfolio
+# Muhammad Haroon Khan - ML Portfolio
 
-The deliberately small first release of my ML portfolio.
+Static HTML/CSS portfolio for GitHub Pages.
 
-**Live site:** https://haroonk2607.github.io/ml-portfolio/
+## Live site
 
-## Stack
+https://haroonk2607.github.io/ml-portfolio/
 
-- Plain HTML and CSS
-- GitHub Pages
-- Space Grotesk and Inter
+## Files I can explain
 
-## Identity
+- `index.html` contains the one-page portfolio structure, cases, links, About, future-work space, and contact section.
+- `styles.css` contains the shared colors, typography, layouts, mobile breakpoints, focus states, and print rules.
+- `cv.html` is a printable web CV built only from verified education, public profile details, and completed internship work. Its one inline browser action opens the normal Print dialog.
+- `dns-walkthrough.html` is the public version of the PF-04 DNS explanation.
+- `favicon.svg` is the small `MH` browser-tab mark.
+- `assets/fonts/` contains the local Inter and Space Grotesk font files, so the site does not depend on a font CDN.
+- `assets/work/` contains real captures from the executed ML work used on the page.
+- `proof/empty-but-live.png` records the first near-blank GitHub Pages milestone.
 
-- Signal green: `#136F63`
-- Near-black ink: `#16211F`
-- Near-white paper: `#F7F9F7`
-- Proof amber: `#F2B84B`
+There is no JavaScript application, framework, package manager, build command, database, or backend. GitHub Pages serves these files directly over HTTPS.
 
-The full case studies will be added in the next build stage. This release proves the project is live before the larger build begins.
+## Local check
 
-## Deployment proof
+Open `index.html` directly, or serve the folder with:
 
-![Deployed empty portfolio page](proof/empty-but-live.png)
+```bash
+python -m http.server 8000
+```
+
+Then visit `http://localhost:8000`.

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A plain-language walkthrough of DNS, CNAME records, and how a browser reaches a hosted website." />
+    <title>DNS Walkthrough | Muhammad Haroon Khan</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .document-shell { width: min(860px, calc(100% - 40px)); margin: 0 auto; padding: 64px 0 96px; }
+      .document-nav { margin-bottom: 60px; }
+      .document-nav a { color: var(--signal); font-weight: 600; }
+      .document-header { padding-bottom: 34px; border-bottom: 2px solid var(--ink); }
+      .document-header h1 { color: var(--ink); font-size: clamp(42px, 7vw, 72px); }
+      .document-header p { color: var(--muted); font-size: 18px; line-height: 1.6; }
+      .walkthrough { padding-top: 22px; }
+      .walkthrough h2 { margin-top: 40px; font-size: 28px; }
+      .walkthrough p, .walkthrough li { color: var(--muted); font-size: 17px; line-height: 1.75; }
+      .walkthrough ol { padding-left: 24px; }
+      .plain-note { margin-top: 36px; padding: 22px; border-left: 4px solid var(--proof); background: var(--white); }
+    </style>
+  </head>
+  <body>
+    <main class="document-shell">
+      <nav class="document-nav" aria-label="Document navigation">
+        <a href="index.html">Back to portfolio</a>
+      </nav>
+
+      <header class="document-header">
+        <p class="eyebrow">PF-04 / Infrastructure note</p>
+        <h1>How a website address finds this site</h1>
+        <p>A plain-language DNS walkthrough by Muhammad Haroon Khan.</p>
+      </header>
+
+      <article class="walkthrough">
+        <h2>What DNS does</h2>
+        <p>
+          DNS is the internet's address directory. People remember names such as
+          example.com, while computers need an address or hosting destination.
+          DNS connects the readable name to the technical place that can answer
+          the request. It does not store the website itself; it tells the browser
+          where to look for it.
+        </p>
+
+        <h2>What a CNAME record means</h2>
+        <p>
+          A CNAME record makes one hostname an alias of another hostname. For
+          example, I could point www.myname.com to haroonk2607.github.io. The DNS
+          response would tell the resolver to continue with the GitHub hostname,
+          and GitHub Pages would serve the site. A CNAME points to a name, not
+          directly to a numeric IP address. That lets the hosting provider change
+          its infrastructure without requiring me to update an IP every time.
+        </p>
+
+        <h2>What happens after someone types the address</h2>
+        <ol>
+          <li>The browser checks whether it already knows the answer from a recent cached visit.</li>
+          <li>If not, it asks a DNS resolver, usually operated by the network provider or a public DNS service.</li>
+          <li>The resolver follows the DNS hierarchy until it reaches the authoritative nameserver for the domain.</li>
+          <li>The authoritative nameserver returns the relevant record. This could be an A or AAAA address record, or a CNAME alias that leads to the host.</li>
+          <li>The resolver returns the final destination to the browser and keeps it for the record's allowed cache time.</li>
+          <li>The browser opens an HTTPS connection to the host. The host checks the requested hostname, chooses the correct site, and returns its HTML, CSS, fonts, and images.</li>
+          <li>The browser verifies the HTTPS certificate, then renders the files as the page on screen.</li>
+        </ol>
+
+        <p class="plain-note">
+          In short: the resolver finds the authoritative nameserver, the DNS
+          record identifies the destination, and the hosting service sends back
+          the website. DNS answers "where?"; the host answers with "here is the
+          site."
+        </p>
+      </article>
+    </main>
+  </body>
+</html>
