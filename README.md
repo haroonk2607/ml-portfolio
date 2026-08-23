@@ -2,6 +2,8 @@
 
 The deliberately small first release of my ML portfolio.
 
+**Live site:** https://haroonk2607.github.io/ml-portfolio/
+
 ## Stack
 
 - Plain HTML and CSS
@@ -16,3 +18,7 @@ The deliberately small first release of my ML portfolio.
 - Proof amber: `#F2B84B`
 
 The full case studies will be added in the next build stage. This release proves the project is live before the larger build begins.
+
+## Deployment proof
+
+![Deployed empty portfolio page](proof/empty-but-live.png)
