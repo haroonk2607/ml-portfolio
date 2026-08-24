@@ -33,6 +33,7 @@ I audited the portfolio at 390 x 844 (phone), 768 x 1024 (tablet), and 1440 x 90
 - Desktop: 1440 x 900, no horizontal overflow, no undersized targets, no console warnings or errors.
 - Supporting pages at phone width: no overflow and no undersized targets.
 - Live score demo remains usable with numeric inputs, a 44 px-plus button, readable output, and an accessible progress state.
+- Live demo test: 50,000 impressions, 0.03% CTR, and position 5 returned score 86, action "Review snippet now," and meter value 86.
 
 ## Screenshot evidence
 
@@ -44,4 +45,3 @@ I audited the portfolio at 390 x 844 (phone), 768 x 1024 (tablet), and 1440 x 90
 ## Real-phone check
 
 The final physical-device step must be completed on a real phone: open the live URL, scroll through every section, run the score demo, open the repository and LinkedIn links, and capture one screenshot. Automated responsive testing cannot honestly replace this step.
-
