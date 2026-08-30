@@ -14,6 +14,15 @@
   const clamp = (value, minimum, maximum) =>
     Math.min(Math.max(value, minimum), maximum);
 
+  const LIMITS = {
+    impressionsMinimum: 1,
+    impressionsMaximum: 1000000,
+    ctrMinimum: 0,
+    ctrMaximum: 100,
+    positionMinimum: 1,
+    positionMaximum: 20,
+  };
+
   const ctrReferenceForPosition = (position) => {
     if (position <= 3) return 0.423;
     if (position <= 10) return 0.339;
@@ -31,19 +40,29 @@
     const ctr = Number(ctrInput.value);
     const position = Number(positionInput.value);
 
-    if (
-      !Number.isFinite(impressions) ||
-      !Number.isFinite(ctr) ||
-      !Number.isFinite(position) ||
-      impressions < 1 ||
-      ctr < 0 ||
-      position < 1 ||
-      position > 20
-    ) {
+    const impressionsValid =
+      Number.isFinite(impressions) &&
+      Number.isInteger(impressions) &&
+      impressions >= LIMITS.impressionsMinimum &&
+      impressions <= LIMITS.impressionsMaximum;
+    const ctrValid =
+      Number.isFinite(ctr) &&
+      ctr >= LIMITS.ctrMinimum &&
+      ctr <= LIMITS.ctrMaximum;
+    const positionValid =
+      Number.isFinite(position) &&
+      position >= LIMITS.positionMinimum &&
+      position <= LIMITS.positionMaximum;
+
+    impressionsInput.setAttribute("aria-invalid", String(!impressionsValid));
+    ctrInput.setAttribute("aria-invalid", String(!ctrValid));
+    positionInput.setAttribute("aria-invalid", String(!positionValid));
+
+    if (!impressionsValid || !ctrValid || !positionValid) {
       scoreValue.value = "--";
       scoreAction.textContent = "Check the input values";
       scoreReason.textContent =
-        "Use positive impressions, a non-negative CTR, and a position from 1 to 20.";
+        "Use whole impressions from 1 to 1,000,000, CTR from 0% to 100%, and a position from 1 to 20.";
       scoreMeter.setAttribute("aria-valuenow", "0");
       scoreMeterFill.style.width = "0%";
       return;
@@ -78,6 +97,11 @@
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
+    if (!form.checkValidity()) {
+      calculate();
+      form.reportValidity();
+      return;
+    }
     calculate();
   });
   form.addEventListener("input", calculate);

@@ -7,10 +7,86 @@
       name="description"
       content="Muhammad Haroon Khan turns search and content data into clear, evidence-led decisions through readable machine-learning work."
     />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#075249" />
+    <link rel="canonical" href="https://haroonk2607.github.io/ml-portfolio/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Muhammad Haroon Khan - ML Portfolio" />
+    <meta property="og:title" content="Muhammad Haroon Khan | ML Portfolio" />
+    <meta
+      property="og:description"
+      content="Search-intelligence and machine-learning work built around clear decisions, readable evidence, and honest limits."
+    />
+    <meta property="og:url" content="https://haroonk2607.github.io/ml-portfolio/" />
+    <meta
+      property="og:image"
+      content="https://haroonk2607.github.io/ml-portfolio/assets/work/model-scorecard.png"
+    />
+    <meta property="og:image:width" content="1600" />
+    <meta property="og:image:height" content="1000" />
+    <meta
+      property="og:image:alt"
+      content="Model scorecard from Muhammad Haroon Khan's search-intelligence portfolio"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Muhammad Haroon Khan | ML Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Readable machine-learning work for practical search and content decisions."
+    />
+    <meta
+      name="twitter:image"
+      content="https://haroonk2607.github.io/ml-portfolio/assets/work/model-scorecard.png"
+    />
     <title>Muhammad Haroon Khan | ML Portfolio</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="assets/fonts/Inter-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/SpaceGrotesk-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="assets/work/hero-evidence-paths-mobile.webp"
+      as="image"
+      type="image/webp"
+      media="(max-width: 700px)"
+    />
+    <link
+      rel="preload"
+      href="assets/work/model-scorecard.png"
+      as="image"
+      type="image/png"
+      media="(min-width: 701px)"
+    />
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Muhammad Haroon Khan",
+        "url": "https://haroonk2607.github.io/ml-portfolio/",
+        "jobTitle": "Machine Learning Intern",
+        "sameAs": [
+          "https://github.com/haroonk2607",
+          "https://www.linkedin.com/in/muhammad-haroon-khan-aa30502a2/"
+        ],
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Air University"
+        }
+      }
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to work</a>
@@ -52,20 +128,20 @@
 
       <section class="proof-band" aria-label="Portfolio proof snapshot">
         <div class="proof-item">
-          <strong>30,000</strong>
-          <span>page rows scored</span>
+          <strong>12,023</strong>
+          <span>eligible rows in grouped validation</span>
         </div>
         <div class="proof-item">
-          <strong>0.680</strong>
-          <span>random forest Precision@50</span>
+          <strong>0.896</strong>
+          <span>random forest mean Precision@50</span>
         </div>
         <div class="proof-item">
-          <strong>0.240</strong>
-          <span>transparent rule Precision@50</span>
+          <strong>0.756</strong>
+          <span>transparent rule mean Precision@50</span>
         </div>
         <p>
-          Starter-data validation supports a better review queue. It does not
-          prove that refreshing a page causes traffic recovery.
+          Five client-grouped folds support testing a better human review queue.
+          They do not prove that refreshing a page causes traffic recovery.
         </p>
       </section>
 
@@ -166,7 +242,7 @@
           <article class="case case-featured">
             <img
               src="assets/work/model-scorecard.png"
-              alt="Model scorecard showing 30,000 rows, random forest Precision at 50 of 0.680, and rule baseline of 0.240"
+              alt="Client-grouped model scorecard showing 12,023 eligible rows, random forest mean Precision at 50 of 0.896, and rule baseline of 0.756"
               width="1600"
               height="1000"
               decoding="async"
@@ -181,8 +257,8 @@
               </p>
               <dl class="case-details">
                 <div><dt>Decision</dt><dd>Which pages deserve review first?</dd></div>
-                <div><dt>Method</dt><dd>Rule baseline, client holdout, readable models</dd></div>
-                <div><dt>Outcome</dt><dd>0.680 vs 0.240 Precision@50 in the starter run</dd></div>
+                <div><dt>Method</dt><dd>Rule baseline, five client-grouped folds, readable models</dd></div>
+                <div><dt>Outcome</dt><dd>0.896 vs 0.756 mean Precision@50</dd></div>
               </dl>
               <a
                 class="text-link"
@@ -271,13 +347,13 @@
         <div class="roadmap" role="list">
           <div role="listitem">
             <span>Now</span>
-            <strong>Model validation and error review</strong>
-            <p>Compare the learned queue with the Week-4 baseline on the same grouped folds.</p>
+            <strong>Action playbook complete</strong>
+            <p>Turn the validated queue into human-reviewed actions, reason codes, and no-go rules.</p>
           </div>
           <div role="listitem">
             <span>Next</span>
-            <strong>Capstone case study</strong>
-            <p>Add the sealed-window result, action playbook, and final report after approval.</p>
+            <strong>Deployed research paper</strong>
+            <p>Trace every public number back to the committed validation and playbook receipts.</p>
           </div>
           <div role="listitem">
             <span>Later</span>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://haroonk2607.github.io/ml-portfolio/sitemap.xml
